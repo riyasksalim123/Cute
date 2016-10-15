@@ -18,6 +18,8 @@ export class AboutPage {
 
   public test()
   {
+
+    alert("this is my test");
      return "this is a test";
 
   }
