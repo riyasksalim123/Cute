@@ -1,11 +1,15 @@
+<!--<ion-header>-->
+  <!--<ion-navbar>-->
+    <!--<ion-title>-->
+      <!--Contact-->
+    <!--</ion-title>-->
+  <!--</ion-navbar>-->
+<!--</ion-header>-->
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+  <ion-navbar color="dark">
+    <ion-title>Dark</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
   <ion-list>
     <ion-list-header>Follow us on Twitter</ion-list-header>
@@ -14,4 +18,10 @@
       @ionicframework
     </ion-item>
   </ion-list>
+  <ion-item>
+    <ion-icon name="logo-twitter" item-left></ion-icon>
+    Followers
+    <ion-badge item-right>260k</ion-badge>
+  </ion-item>
+  <button (click)="navigate()">nav</button>
 </ion-content>

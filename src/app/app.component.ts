@@ -3,17 +3,20 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { MyData } from '../pages/tabs/my-data'
 
+import { SearchCityService } from '../pages/searchcity/searchcityservice'
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  template: `<ion-nav [root]="rootPage"></ion-nav>`,
+  providers:[MyData,SearchCityService]
 })
 export class MyApp {
   rootPage = TabsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
-      alert("platform ready");
+     // alert("platform ready");
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();

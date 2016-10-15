@@ -9,20 +9,19 @@ import { NavController  } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController,
-              )
+  constructor(public navCtrl: NavController)
   {
-    //this.prompt();
 
 
-    //this.hero.name="sdfgsdg"
+
   }
 
   public test()
   {
-return "this is a test";
-  // this.PopupCntrl.Confirmalert();
+     return "this is a test";
+
   }
+
 
 
 }
