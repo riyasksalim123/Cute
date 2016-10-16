@@ -1,18 +1,14 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-
-// import { TabsPage } from '../pages/tabs/tabs';
 import { MyData } from '../pages/tabs/my-data'
-
-// import { AboutPage} from '../pages/about/about';
-
 import { LoginPage} from '../pages/login/login'
 import { SearchCityService } from '../pages/searchcity/searchcityservice'
+import {CommonServices} from "../providers/common-services";
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`,
-  providers:[MyData,SearchCityService]
+  template: `<ion-nav  [root]="rootPage"></ion-nav>`,
+  providers:[MyData,SearchCityService,CommonServices]
 })
 export class MyApp {
  // rootPage = TabsPage;

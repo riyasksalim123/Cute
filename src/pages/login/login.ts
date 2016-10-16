@@ -9,10 +9,11 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController,private alertCtrl: AlertController,private toastCtrl: ToastController)
   {
-    this.prompt();
+   // this.prompt();
+    this.toaster();
     setInterval(function(){
 
-      this.toaster();
+
      }, 3000);
 
   }

@@ -5,29 +5,38 @@
   Ionic pages and navigation.
 -->
 <style>
-  .custom-alert button.alert-button {
-    width: 33.33%;
-  }
 
-  .custom-alert .alert-button .button-inner {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-
-  .custom-alert .alert-button-group.vertical {
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row ;
-  }
 </style>
-<ion-header>
-  <ion-navbar>
+<ion-header >
+  <ion-navbar dark>
     <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <page-contact></page-contact>
-  <page-searchcity></page-searchcity>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Header
+    </ion-card-header>
+    <ion-card-content>
+      The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding>
+        <button ion-button color="dark" round>Dark Round</button>
+        <button ion-button color="dark" round>Dark Round</button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
