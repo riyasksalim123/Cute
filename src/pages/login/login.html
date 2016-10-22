@@ -35,8 +35,17 @@
       </ion-list>
 
       <div padding>
-        <button ion-button color="dark" (click)="tester()" round>stop tracking</button>
+          <button ion-button color="dark" (click)="stopTracking()" round>stop tracking</button>
         <button ion-button color="dark" (click)="startTracking()" round>start Round</button>
+          <button ion-button color="dark" (click)="getcurrentloccation()">getcurent location</button>
+
+          <button ion-button color="dark" (click)="speak()">getcurent location</button>
+          <button ion-button color="dark" (click)="toaster()">show toasty</button>
+          <button ion-button color="dark" (click)="prompt()">show prompt</button>
+
+
+          
+          
       </div>
     </ion-card-content>
   </ion-card>

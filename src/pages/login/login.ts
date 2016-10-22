@@ -1,7 +1,7 @@
 import { Component,Injectable, NgZone } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AlertController,ToastController } from 'ionic-angular';
-import {BackgroundMode ,Geolocation, Geoposition, BackgroundGeolocation} from 'ionic-native';
+import {BackgroundMode, Geolocation, Geoposition, BackgroundGeolocation, TextToSpeech} from 'ionic-native';
 import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/filter';
 @Injectable()
@@ -15,12 +15,13 @@ export class LoginPage {
               private alertCtrl: AlertController,
               private toastCtrl: ToastController,
               public back:BackgroundMode,
-              public platform:Platform,
+             public platform: Platform,
               public zone: NgZone)
   {
      this.prompt();
      this.toaster();
      this.startTracking();
+     this.speak();
 
   }
 
@@ -28,8 +29,43 @@ export class LoginPage {
   public lat: number = 0;
   public lng: number = 0;
 
+  getcurrentloccation() {
+
+     this.platform.ready().then(() => {
+
+          Geolocation.getCurrentPosition().then((resp) => {
+              console.log("Latitude: ", resp.coords.latitude);
+              console.log("Longitude: ", resp.coords.longitude);
+              alert("Latitude: " + resp.coords.latitude);
+          });
+          //alert("platform ready");
+          TextToSpeech.speak('platform ready')
+              .then(() => console.log('Success'))
+              .catch((reason: any) =>
+
+                  console.log(reason)
+
+                  );
+           //Okay, so the platform is ready and our plugins are available.
+           //Here you can do any higher level native things you might need.
+        
 
 
+      });
+     
+  }
+
+  speak()
+  {
+
+      TextToSpeech.speak('Hello World')
+          .then(() => console.log('Success'))
+          .catch((reason: any) =>
+
+              console.log(reason)
+          
+          );
+  }
   startTracking() {
     alert('BackgroundGeolocation:');
     let config = {
@@ -76,6 +112,7 @@ export class LoginPage {
       this.zone.run(() => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        alert(this.lat);
 
       });
 
@@ -90,9 +127,7 @@ export class LoginPage {
 
   }
 
-  public tester(){
- // this.stopTracking();
-}
+ 
   toaster(){
     let toast = this.toastCtrl.create({
       message: 'User was added successfully',
@@ -119,10 +154,10 @@ export class LoginPage {
     //
     // })
   };
+  public tester() { }
 
 
-
-  public prompt()
+  prompt()
   {
     let alert = this.alertCtrl.create({
       title: 'Login',
